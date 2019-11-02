@@ -44,7 +44,7 @@ public class BuscarListaMainActivity extends AppCompatActivity {
 
         adapter = new PlaylistAdapter();
         listviewPlaylists.setAdapter(adapter);
-
+//xd
 
         btnAgregarPlaylist.setOnClickListener(new View.OnClickListener() {
             @Override
