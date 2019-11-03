@@ -17,6 +17,7 @@ import com.deezer.sdk.network.request.DeezerRequestFactory;
 import com.deezer.sdk.network.request.event.JsonRequestListener;
 import com.deezer.sdk.network.request.event.RequestListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -49,7 +50,6 @@ public class BuscarListaMainActivity extends AppCompatActivity {
         final DeezerConnect deezerConnect = new DeezerConnect(this, applicationID);
 
 
-
         botonBusqueda = findViewById(R.id.buscar_button);
         textoBusqueda = findViewById(R.id.buscar_edit_text);
 
@@ -74,7 +74,12 @@ public class BuscarListaMainActivity extends AppCompatActivity {
                             String nombreUsuario = "" + listaPlaylist.get(i).getCreator().getName();
                             String descripcion = listaPlaylist.get(i).getDescription();
 
-                            LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, adapter.getCount());
+
+                            //CAMBIAR NUMERO DE CANCIONES
+
+                            LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, listaPlaylist.get(i).getTracks().size());
+                            p.setUrlImagenPlaylist( listaPlaylist.get(i).getMediumImageUrl());
+                            p.setNumeroDeCancionesEnLaLista(listaPlaylist.get(i).getTracks().size());
 
                             adapter.addPlaylist(p);
                         }
@@ -94,8 +99,6 @@ public class BuscarListaMainActivity extends AppCompatActivity {
                 };
 
 
-
-
                 DeezerRequest request = DeezerRequestFactory.requestSearchPlaylists(textoBusqueda.getText().toString());
 
                 deezerConnect.requestAsync(request, listener);
@@ -109,10 +112,6 @@ public class BuscarListaMainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-
-
-
-
                 Intent myIntent = new Intent(BuscarListaMainActivity.this, VerListaActivity.class);
 
                 CancionAdapter cancion = adapter.getItem(position).getCanciones();
@@ -123,10 +122,7 @@ public class BuscarListaMainActivity extends AppCompatActivity {
                 startActivity(myIntent);
 
 
-
-               // Toast.makeText(BuscarListaMainActivity.this, "" +adapter.getItem(position).getNombreDeLista(), Toast.LENGTH_SHORT).show();
-
-
+                // Toast.makeText(BuscarListaMainActivity.this, "" +adapter.getItem(position).getNombreDeLista(), Toast.LENGTH_SHORT).show();
 
 
             }
@@ -139,14 +135,13 @@ public class BuscarListaMainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 11 && resultCode == RESULT_OK) {
 
-          //  String nombreLista = data.getExtras().getString("nombreLista");
-           // String nombreUsuario = data.getExtras().getString("nombreUsuario");
-           // String descripcion = data.getExtras().getString("descripcion");
+            //  String nombreLista = data.getExtras().getString("nombreLista");
+            // String nombreUsuario = data.getExtras().getString("nombreUsuario");
+            // String descripcion = data.getExtras().getString("descripcion");
 
-          //  LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, adapter.getCount());
+            //  LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, adapter.getCount());
 
-          //  adapter.addPlaylist(p);
-
+            //  adapter.addPlaylist(p);
 
 
         }
