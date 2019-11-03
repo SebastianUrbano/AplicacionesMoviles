@@ -15,7 +15,7 @@ public class VerListaActivity extends AppCompatActivity {
     private ListView listviewCanciones;
     private CancionAdapter adapter;
 
-    //sera rellenado con Playlist.darCancionAdapter----------------------------------------------
+    //sera rellenado con LaPlaylist.darCancionAdapter----------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +32,6 @@ public class VerListaActivity extends AppCompatActivity {
 
 
         adapter = c;
-
-
-        if (adapter  != null){
-            Toast.makeText(this, "OIGA" + adapter.toString(), Toast.LENGTH_SHORT).show();
-        }
-
 
         listviewCanciones.setAdapter(adapter);
 

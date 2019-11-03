@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class PlaylistAdapter extends BaseAdapter {
 
-    private ArrayList<Playlist> playlists;
+    private ArrayList<LaPlaylist> laPlaylists;
 
     public PlaylistAdapter(){
-        playlists = new ArrayList<>();
+        laPlaylists = new ArrayList<>();
 
     }
 
@@ -23,13 +23,13 @@ public class PlaylistAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return playlists.size();
+        return laPlaylists.size();
     }
 
 
     @Override
-    public Playlist getItem(int position) {
-        return playlists.get(position);
+    public LaPlaylist getItem(int position) {
+        return laPlaylists.get(position);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class PlaylistAdapter extends BaseAdapter {
         TextView textoNombre = (TextView) view.findViewById(R.id.text_nombre_lista);
         TextView  textoNumeroItems = (TextView) view.findViewById(R.id.text_numero_items);
 
-        final Playlist data = playlists.get(position);
+        final LaPlaylist data = laPlaylists.get(position);
 
 
         //rowCall TAREA: ACTION_CALL --------------------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ public class PlaylistAdapter extends BaseAdapter {
      //       @Override
       //      public void onClick(View view) {
 //
-       //         playlists.remove(data);
+       //         laPlaylists.remove(data);
       //          notifyDataSetChanged();
       //      }
       //  });
@@ -74,9 +74,9 @@ public class PlaylistAdapter extends BaseAdapter {
         return view;
     }
 
-    public void addPlaylist(Playlist c )
+    public void addPlaylist(LaPlaylist c )
     {
-        playlists.add(c);
+        laPlaylists.add(c);
         notifyDataSetChanged();
 
     }

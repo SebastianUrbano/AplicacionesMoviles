@@ -2,7 +2,7 @@ package com.example.listaslibreta;
 
 import android.widget.ArrayAdapter;
 
-public class Playlist {
+public class LaPlaylist {
 
     private String nombreDeLista;
     private String nombreDeUsuario, descripcion, urlImagenPlaylist;
@@ -11,7 +11,7 @@ public class Playlist {
     private CancionAdapter canciones;
 
 
-    public Playlist(String nombreDeLista, String nombreDeUsuario, String descripcion, int numeroDeCancionesEnLaLista) {
+    public LaPlaylist(String nombreDeLista, String nombreDeUsuario, String descripcion, int numeroDeCancionesEnLaLista) {
         this.nombreDeLista = nombreDeLista;
         this.nombreDeUsuario = nombreDeUsuario;
         this.descripcion = descripcion;
