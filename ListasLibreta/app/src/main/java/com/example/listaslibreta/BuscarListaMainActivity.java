@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.deezer.sdk.model.Playlist;
@@ -21,6 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,7 @@ public class BuscarListaMainActivity extends AppCompatActivity {
     //private EditText nameEt;
     //  private EditText telEt;
 
+    private RelativeLayout relativeLayout;
     private EditText textoBusqueda;
 
     private ImageButton botonBusqueda;
@@ -43,6 +46,18 @@ public class BuscarListaMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_buscar_lista);
+
+        relativeLayout = findViewById(R.id.milayout);
+
+        final int sdk = android.os.Build.VERSION.SDK_INT;
+        if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            relativeLayout.setBackground(ContextCompat.getDrawable(this, R.drawable.music) );
+        } else {
+            relativeLayout.setBackground(ContextCompat.getDrawable(this, R.drawable.music));
+        }
+
+
+
 
         Toolbar mToolbar = findViewById(R.id.toolbar2);
         mToolbar.setTitle("         " +
@@ -157,21 +172,7 @@ public class BuscarListaMainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 11 && resultCode == RESULT_OK) {
 
-            //  String nombreLista = data.getExtras().getString("nombreLista");
-            // String nombreUsuario = data.getExtras().getString("nombreUsuario");
-            // String descripcion = data.getExtras().getString("descripcion");
-
-            //  LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, adapter.getCount());
-
-            //  adapter.addPlaylist(p);
-
-
-        }
-    }
 
 
 }
