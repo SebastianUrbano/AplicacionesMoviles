@@ -1,12 +1,14 @@
 package com.example.listaslibreta;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.deezer.sdk.model.Playlist;
@@ -25,12 +27,25 @@ public class VerListaActivity extends AppCompatActivity {
     private CancionAdapter adapter;
     private Playlist playlist;
     private List<Track> theTracks;
+    private RelativeLayout relativeLayout;
+
+
+
 
     //sera rellenado con LaPlaylist.darCancionAdapter----------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_lista);
+
+        relativeLayout = findViewById(R.id.milayout2);
+
+        final int sdk = android.os.Build.VERSION.SDK_INT;
+        if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            relativeLayout.setBackground(ContextCompat.getDrawable(this, R.drawable.music) );
+        } else {
+            relativeLayout.setBackground(ContextCompat.getDrawable(this, R.drawable.music));
+        }
 
         String applicationID = "377884";
         final DeezerConnect deezerConnect = new DeezerConnect(this, applicationID);

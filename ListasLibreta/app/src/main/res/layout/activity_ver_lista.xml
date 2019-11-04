@@ -2,7 +2,8 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="780dp"
+    android:id= "@+id/milayout2"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -11,6 +12,35 @@
         android:layout_below= "@+id/toolbar2"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imagen_de_la_cancion"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/label_nombre_playlist"
+            android:textSize="25dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/label_descripcion_playlist"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/label_numero_canciones"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            />
 
 
 
