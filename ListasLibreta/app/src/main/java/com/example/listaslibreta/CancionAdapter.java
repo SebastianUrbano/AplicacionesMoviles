@@ -1,13 +1,18 @@
 package com.example.listaslibreta;
 
 import android.content.Context;
+import android.media.Image;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -53,27 +58,17 @@ public class CancionAdapter extends BaseAdapter implements Parcelable {
         TextView textoCancion =(TextView) view.findViewById(R.id.text_nombre_cancion);
         TextView textoArtista = (TextView) view.findViewById(R.id.text_nombre_artista);
         TextView  textoAnhoLanzamiento = (TextView) view.findViewById(R.id.text_anho_lanzamiento);
+        ImageView imagen =(ImageView) view.findViewById(R.id.imagen_cancion);
 
         final Cancion data = canciones.get(position);
 
 
-        //rowCall TAREA: ACTION_CALL --------------------------------------------------------------------------------------------------
-
-        //  rowDelete.setOnClickListener(new View.OnClickListener() {
-        //       @Override
-        //      public void onClick(View view) {
-//
-        //         playlists.remove(data);
-        //          notifyDataSetChanged();
-        //      }
-        //  });
-
         textoArtista.setText(data.getNombreDelArtista());
         textoCancion.setText(data.getNombreDeCancion());
+        Picasso.get().load(data.getUrlImagenCancion().trim()).into(imagen);
+
         //CAMBIAR--------------------------------------------------------------------------------
         textoAnhoLanzamiento.setText("1998");
-
-
 
 
         return view;

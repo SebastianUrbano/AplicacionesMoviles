@@ -7,11 +7,11 @@ public class Cancion implements Serializable {
     private String nombreDeCancion, nombreDelArtista, anhoDeLanzamiento, urlImagenCancion;
 
 
-    public Cancion(String nombreDeCancion, String nombreDelArtista, String anhoDeLanzamiento) {
+    public Cancion(String nombreDeCancion, String nombreDelArtista, String anhoDeLanzamiento, String elurlImagenCancion) {
         this.nombreDeCancion = nombreDeCancion;
         this.nombreDelArtista = nombreDelArtista;
         this.anhoDeLanzamiento = anhoDeLanzamiento;
-        urlImagenCancion = "";
+        this.urlImagenCancion = elurlImagenCancion;
     }
 
     public String getNombreDeCancion() {

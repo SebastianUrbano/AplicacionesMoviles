@@ -14,7 +14,8 @@
             android:layout_height="80dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/plus">
+            android:src="@drawable/plus"
+            >
 
         </ImageView>
 

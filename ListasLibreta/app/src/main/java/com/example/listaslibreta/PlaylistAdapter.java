@@ -52,7 +52,7 @@ public class PlaylistAdapter extends BaseAdapter {
         TextView textoUsuario =(TextView) view.findViewById(R.id.text_nombre_usuario);
         TextView textoNombre = (TextView) view.findViewById(R.id.text_nombre_lista);
         TextView  textoNumeroItems = (TextView) view.findViewById(R.id.text_numero_items);
-        ImageView imagen= (ImageView) view.findViewById(R.id.imagen_playlist);
+        ImageView imagenn= (ImageView) view.findViewById(R.id.imagen_playlist);
 
         final LaPlaylist data = laPlaylists.get(position);
 
@@ -60,8 +60,10 @@ public class PlaylistAdapter extends BaseAdapter {
         textoNombre.setText(data.getNombreDeLista());
         textoUsuario.setText(data.getNombreDeUsuario());
         textoNumeroItems.setText(data.getNumeroDeCancionesEnLaLista() + "");
+        Picasso.get().load(data.getUrlImagenPlaylist()).into(imagenn);
 
-        Picasso.get().load(data.getUrlImagenPlaylist()).into(imagen);
+
+
 
 
 

@@ -94,7 +94,8 @@ public class BuscarListaMainActivity extends AppCompatActivity {
                                     String anhoLanza = "uy" + j;
 
 
-                                    cancion.addCancion(new Cancion(nombreDeCancion, nombreArtista, anhoLanza));
+                                    cancion.addCancion(new Cancion(nombreDeCancion, nombreArtista, anhoLanza,
+                                            listaPlaylist.get(i).getTracks().get(j).getAlbum().getImageUrl()));
 
 
                                 }

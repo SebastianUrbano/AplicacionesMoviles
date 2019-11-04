@@ -56,7 +56,9 @@ public class VerListaActivity extends AppCompatActivity {
 
                 for(int i = 0; i< theTracks.size(); i++){
 
-                    adapter.addCancion(new Cancion(theTracks.get(i).getTitle(), theTracks.get(i).getArtist().getName(), "2011")  );
+                    Cancion cancioncita = new Cancion(theTracks.get(i).getTitle(), theTracks.get(i).getArtist().getName(), "2011",
+                            theTracks.get(i).getAlbum().getBigImageUrl()  );
+                    adapter.addCancion(cancioncita );
 
 
                 }
@@ -80,6 +82,19 @@ public class VerListaActivity extends AppCompatActivity {
         listviewCanciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override//
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent myIntent = new Intent(VerListaActivity.this, CancionActivity.class);
+
+
+
+                myIntent.putExtra("songname", theTracks.get(position).getTitle());
+                myIntent.putExtra("artistname", theTracks.get(position).getArtist().getName());
+                myIntent.putExtra("albumname", theTracks.get(position).getAlbum().getTitle());
+                myIntent.putExtra("duration", theTracks.get(position).getDuration() + "");
+                myIntent.putExtra("songlink", theTracks.get(position).getPreviewUrl());
+                myIntent.putExtra("urlimage", theTracks.get(position).getAlbum().getBigImageUrl());
+
+                startActivity(myIntent);
 
                 Toast.makeText(VerListaActivity.this, "" +adapter.getItem(position).getNombreDeCancion(), Toast.LENGTH_SHORT).show();
 
