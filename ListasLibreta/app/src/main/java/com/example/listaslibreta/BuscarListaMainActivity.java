@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.deezer.sdk.model.Playlist;
+import com.deezer.sdk.model.Track;
 import com.deezer.sdk.network.connect.DeezerConnect;
 import com.deezer.sdk.network.request.DeezerRequest;
 import com.deezer.sdk.network.request.DeezerRequestFactory;
@@ -22,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BuscarListaMainActivity extends AppCompatActivity {
 
@@ -61,51 +63,77 @@ public class BuscarListaMainActivity extends AppCompatActivity {
         listviewPlaylists.setAdapter(adapter);
 
 
-        btnAgregarPlaylist.setOnClickListener(new View.OnClickListener() {
+        botonBusqueda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RequestListener listener = new JsonRequestListener() {
-                    public void onResult(Object result, Object requestId) {
-                        listaPlaylist = (ArrayList<Playlist>) result;
 
-                        for (int i = 0; i < listaPlaylist.size(); i++) {
+                if (!textoBusqueda.getText().toString().equals("")) {
 
-                            String nombreLista = listaPlaylist.get(i).getTitle();
-                            String nombreUsuario = "" + listaPlaylist.get(i).getCreator().getName();
-                            String descripcion = listaPlaylist.get(i).getDescription();
+                    RequestListener listener = new JsonRequestListener() {
+                        public void onResult(Object result, Object requestId) {
+                            listaPlaylist = (ArrayList<Playlist>) result;
+
+                            for (int i = 0; i < listaPlaylist.size(); i++) {
+
+                                String nombreLista = listaPlaylist.get(i).getTitle();
+                                String nombreUsuario = "" + listaPlaylist.get(i).getCreator().getName();
+                                String descripcion = listaPlaylist.get(i).getDescription();
 
 
-                            //CAMBIAR NUMERO DE CANCIONES
+                                //CAMBIAR NUMERO DE CANCIONES
+                                CancionAdapter cancion = new CancionAdapter();
 
-                            LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, listaPlaylist.get(i).getTracks().size());
-                            p.setUrlImagenPlaylist( listaPlaylist.get(i).getMediumImageUrl());
-                            p.setNumeroDeCancionesEnLaLista(listaPlaylist.get(i).getTracks().size());
+                                List<Track> tracks = listaPlaylist.get(i).getTracks();
 
-                            adapter.addPlaylist(p);
+
+                                for (int j = 0; j < tracks.size(); j++) {
+
+
+                                    String nombreDeCancion = listaPlaylist.get(i).getTracks().get(j).getTitle() + j;
+                                    String nombreArtista = listaPlaylist.get(i).getTracks().get(j).getArtist().getName() + j;
+                                    String anhoLanza = "uy" + j;
+
+
+                                    cancion.addCancion(new Cancion(nombreDeCancion, nombreArtista, anhoLanza));
+
+
+                                }
+
+
+                                LaPlaylist p = new LaPlaylist(nombreLista, nombreUsuario, descripcion, listaPlaylist.get(i).getTracks().size()
+                                        , cancion);
+
+                                Toast.makeText(BuscarListaMainActivity.this, listaPlaylist.get(i).getTracks().size() + "", Toast.LENGTH_LONG);
+                                p.setUrlImagenPlaylist(listaPlaylist.get(i).getMediumImageUrl());
+                                p.setNumeroDeCancionesEnLaLista(listaPlaylist.get(i).getTracks().size());
+
+
+                                adapter.addPlaylist(p);
+                            }
+
+
                         }
 
+                        public void onUnparsedResult(String requestResponse, Object requestId) {
+                        }
 
-                        //  for (int i = 0; i < listaPlaylist.size(); i++) {
-                        //     infoListas.agregarLista(listPlaylist.get(i));
-                        // }
-
-                    }
-
-                    public void onUnparsedResult(String requestResponse, Object requestId) {
-                    }
-
-                    public void onException(Exception e, Object requestId) {
-                    }
-                };
+                        public void onException(Exception e, Object requestId) {
+                        }
+                    };
 
 
-                DeezerRequest request = DeezerRequestFactory.requestSearchPlaylists(textoBusqueda.getText().toString());
+                    DeezerRequest request = DeezerRequestFactory.requestSearchPlaylists(textoBusqueda.getText().toString());
 
-                deezerConnect.requestAsync(request, listener);
+                    deezerConnect.requestAsync(request, listener);
 
+
+                } else {
+                    Toast.makeText(BuscarListaMainActivity.this, "Campo vacío, por favor escriba una Playlist", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
+
 
         listviewPlaylists.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override//
@@ -114,11 +142,8 @@ public class BuscarListaMainActivity extends AppCompatActivity {
 
                 Intent myIntent = new Intent(BuscarListaMainActivity.this, VerListaActivity.class);
 
-                CancionAdapter cancion = adapter.getItem(position).getCanciones();
-                cancion.addCancion(new Cancion("ay ombre", "lewis", "2000"));
-
-                myIntent.putExtra("adapterDeCanciones", cancion);
-
+                long ID = listaPlaylist.get(position).getId();
+                myIntent.putExtra("id", ID);
                 startActivity(myIntent);
 
 

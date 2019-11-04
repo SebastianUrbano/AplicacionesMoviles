@@ -11,13 +11,13 @@ public class LaPlaylist {
     private CancionAdapter canciones;
 
 
-    public LaPlaylist(String nombreDeLista, String nombreDeUsuario, String descripcion, int numeroDeCancionesEnLaLista) {
+    public LaPlaylist(String nombreDeLista, String nombreDeUsuario, String descripcion, int numeroDeCancionesEnLaListam, CancionAdapter can) {
         this.nombreDeLista = nombreDeLista;
         this.nombreDeUsuario = nombreDeUsuario;
         this.descripcion = descripcion;
         this.numeroDeCancionesEnLaLista = numeroDeCancionesEnLaLista;
         urlImagenPlaylist = "";
-        canciones = new CancionAdapter();
+        canciones = can;
     }
 
     public String getNombreDeLista() {
