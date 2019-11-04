@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.deezer.sdk.model.Playlist;
@@ -18,6 +20,7 @@ import com.deezer.sdk.network.request.DeezerRequest;
 import com.deezer.sdk.network.request.DeezerRequestFactory;
 import com.deezer.sdk.network.request.event.JsonRequestListener;
 import com.deezer.sdk.network.request.event.RequestListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -30,6 +33,8 @@ public class VerListaActivity extends AppCompatActivity {
     private RelativeLayout relativeLayout;
 
 
+    private ImageView imagenGrande;
+    private TextView uno, dos, tres;
 
 
     //sera rellenado con LaPlaylist.darCancionAdapter----------------------------------------------
@@ -47,6 +52,13 @@ public class VerListaActivity extends AppCompatActivity {
             relativeLayout.setBackground(ContextCompat.getDrawable(this, R.drawable.music));
         }
 
+        imagenGrande = findViewById(R.id.imagen_de_la_cancion);
+        uno = findViewById(R.id.label_nombre_playlist);
+        dos = findViewById(R.id.label_descripcion_playlist);
+        tres = findViewById(R.id.label_numero_canciones);
+
+
+
         String applicationID = "377884";
         final DeezerConnect deezerConnect = new DeezerConnect(this, applicationID);
 
@@ -61,6 +73,12 @@ public class VerListaActivity extends AppCompatActivity {
 
             public void onResult(Object result, Object requestId) {
                 playlist = (Playlist) result;
+
+                uno.setText(playlist.getTitle());
+                dos.setText(playlist.getDescription());
+                tres.setText(playlist.getTracks().size() + " canciones en la playlist" );
+
+                Picasso.get().load(playlist.getBigImageUrl()).into(imagenGrande);
                 theTracks = playlist.getTracks();
 
              //   txt_Descripcion.setText(playlist.getDescription());
