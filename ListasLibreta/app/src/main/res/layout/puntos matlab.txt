@@ -1,0 +1,68 @@
+16
+Eb_No= 0:1:15;
+CbNo=10.^(Eb_No/10);
+Pb=1/2*erfc(sqrt(CbNo));
+
+figure;semilogy(Eb_No,Pb,'bs-','LineWidth',2);title('Validacion');
+hold on
+axis([0 15 10^-8 1])
+
+xlabel('Eb/No [dB]');ylabel('Pb');grid on;
+
+21
+Rb= 1*10^6;
+M=4;
+b=log2(M);
+
+Tb=1/Rb;
+Vm=10*10^-3;
+Eb=(Vm^2)*Tb/4;
+No=10^-11;
+Eb_No= 0:1:15;
+CbNo=10.^(Eb_No/10);
+Pb=1/2.*erfc(sqrt(CbNo));
+Ps=b.*Pb;
+
+figure(1);
+semilogy(Eb_No,Pb,'bs-','LineWidth',2);title('Pb');
+hold on
+axis([0 15 10^-8 1])
+xlabel('Eb/No [dB]');ylabel('Pb');
+grid on;
+
+
+figure(2)
+
+semilogy(Eb_No,Ps,'rs-','LineWidth',2);title('Ps');
+hold on
+axis([0 15 10^-8 1])
+xlabel('Eb/No [dB]');ylabel('Ps');
+grid on;
+
+
+22
+BW= 8000000
+
+C=4000000
+
+M=8;
+
+b=log2(M);
+Ys=(2^(C/BW))-1
+Yb=Ys/b
+Ys_dB=10*log10(Ys)
+yb_dB=10*log10(Yb)
+
+Ps=erfc(sqrt(Ys)*sin(pi/M))
+
+Pb=Ps/b
+Eb_No = -10:0.5:0;
+
+Eb_No_dB = 10.^(Eb_No/10);
+Ps = erfc(sqrt(Eb_No_dB)*sin(pi/M));
+Pb = Ps/b;
+figure; semilogy(Eb_No, Pb, 'bs-','LineWidth', 2);xlabel('Eb/No (dB)');ylabel('Pb'); title('BER vs Eb/No');
+figure; semilogy(Eb_No, Ps, 'bs-','LineWidth', 2);xlabel('Eb/No (dB)');ylabel('Ps'); title('SER vs Eb/No');
+C=0:10^6:8*10^6;
+Ys=(2.^(C/BW))-1;
+figure; semilogy(Ys, C, 'bs-','LineWidth', 2);xlabel('Eb/No (dB)');ylabel('C'); title('C vs Eb/No');
