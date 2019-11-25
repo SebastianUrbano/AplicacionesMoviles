@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "582376466390",
+    "firebase_url": "https://preclase14martes2.firebaseio.com",
+    "project_id": "preclase14martes2",
+    "storage_bucket": "preclase14martes2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582376466390:android:b65b920febd7195b46a677",
+        "android_client_info": {
+          "package_name": "appmoviles.com.preclase13"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582376466390-8e98oobeorkmnv4utcd7tci7dfutu4i9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "appmoviles.com.preclase13",
+            "certificate_hash": "7da369bc7d8d4b1d1d4d42c17c30bf1d4b96e963"
+          }
+        },
+        {
+          "client_id": "582376466390-6jjcd2ei7j498f7urc3rnpg167qq417l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOfMLwCU0TJWElqpxVpTrn90iTdH0jJPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582376466390-6jjcd2ei7j498f7urc3rnpg167qq417l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
