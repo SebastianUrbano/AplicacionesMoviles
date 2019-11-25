@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        olvida_tv.findViewById(R.id.olvida_tv);
-        registra_tv.findViewById(R.id.registrar_tv);
-        usuario_et.findViewById(R.id.user_et);
-        password_et.findViewById(R.id.password_et);
-        inicia_bt.findViewById(R.id.inicia_bt);
+        olvida_tv = findViewById(R.id.olvida_tv);
+        registra_tv = findViewById(R.id.registrar_tv);
+        usuario_et = findViewById(R.id.user_et);
+        password_et = findViewById(R.id.password_et);
+        inicia_bt = findViewById(R.id.inicia_bt);
     }
 }

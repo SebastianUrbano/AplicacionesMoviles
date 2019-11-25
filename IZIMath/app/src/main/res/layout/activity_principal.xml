@@ -68,7 +68,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/Explora"
+        android:src="@drawable/explora"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -93,7 +93,7 @@
                 android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/geometriaEdit" />
+                app:srcCompat="@drawable/geometriaedit" />
 
             <ImageButton
                 android:id="@+id/imageButton_lineal"
@@ -104,7 +104,7 @@
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton_Ecua"
-                app:srcCompat="@drawable/linealEdit" />
+                app:srcCompat="@drawable/linealedit" />
 
             <ImageButton
                 android:id="@+id/imageButton_Ecua"
@@ -148,7 +148,7 @@
                 android:layout_marginTop="188dp"
                 android:layout_marginEnd="228dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/formulasBlackBackground"
+                android:src="@drawable/formulasblackbackground"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,7 +172,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="40dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/calculoEdit"
+                android:src="@drawable/calculoedit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -183,7 +183,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/algebraEdit"
+                android:src="@drawable/algebraedit"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
