@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
         inicia_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //HACER INICIO AUTENTICANDO----------------------------------------------------------------------------------
                 Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
-
+//
                 startActivity(i);
             }
         });

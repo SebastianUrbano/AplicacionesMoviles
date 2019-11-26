@@ -11,22 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegisterHelperActivity extends AppCompatActivity {
 
 
-    private Button atrasBtn;
+    private Button atrasBtnn;
     private Button registrarseBtn;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.register_helper_activity);
 
-        atrasBtn = findViewById(R.id.backHR_btn);
+        atrasBtnn = findViewById(R.id.backHR_btn);
         registrarseBtn = findViewById(R.id.registerHR_btn);
-
-        atrasBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
         registrarseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +31,13 @@ public class RegisterHelperActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        atrasBtnn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
 
     }

@@ -17,6 +17,7 @@ public class RegisterUserActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.register_user_activity);
 
         atrasBtn = findViewById(R.id.backUR_btn);
         registrarseBtn = findViewById(R.id.registerUR_btn);
