@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.telecracksapp.izimath.model.User;
+
 public class RegisterOptionsActivity  extends AppCompatActivity {
 
 
@@ -32,8 +34,11 @@ public class RegisterOptionsActivity  extends AppCompatActivity {
         usuario_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent i = new Intent(RegisterOptionsActivity.this, RegisterUserActivity.class);
+                i.putExtra("userType", User.USER);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -41,7 +46,9 @@ public class RegisterOptionsActivity  extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(RegisterOptionsActivity.this, RegisterHelperActivity.class);
+                i.putExtra("userType", User.HELPER);
                 startActivity(i);
+                finish();
             }
         });
 

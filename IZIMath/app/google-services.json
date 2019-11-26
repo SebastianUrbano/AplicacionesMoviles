@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "553711224641",
+    "firebase_url": "https://preclase13-1f00c.firebaseio.com",
+    "project_id": "preclase13-1f00c",
+    "storage_bucket": "preclase13-1f00c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553711224641:android:67cee881d387f1c405c3c0",
+        "android_client_info": {
+          "package_name": "appmoviles.com.preclase13Comenovias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553711224641-lppdbc7luqusqu3rjj4todlnfbs5vuof.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "appmoviles.com.preclase13Comenovias",
+            "certificate_hash": "019c756e2c5aaf04f5a319df1f7621e1ba0ec5f9"
+          }
+        },
+        {
+          "client_id": "553711224641-166d2f7sr5btvvl0eop3eerjtea79jno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9MvVgN4dqMepcUuCbmEeahdE5Vjsqpgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553711224641-166d2f7sr5btvvl0eop3eerjtea79jno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553711224641:android:16136fed6130a34a05c3c0",
+        "android_client_info": {
+          "package_name": "appmoviles.com.preclase14domrinmartesMateito"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553711224641-tk2abu3v7te0epnel29dqg6ppactks27.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "appmoviles.com.preclase14domrinmartesMateito",
+            "certificate_hash": "019c756e2c5aaf04f5a319df1f7621e1ba0ec5f9"
+          }
+        },
+        {
+          "client_id": "553711224641-166d2f7sr5btvvl0eop3eerjtea79jno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9MvVgN4dqMepcUuCbmEeahdE5Vjsqpgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553711224641-166d2f7sr5btvvl0eop3eerjtea79jno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553711224641:android:8e7ab9b10f54000a05c3c0",
+        "android_client_info": {
+          "package_name": "com.example.telecracksapp.izimath"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553711224641-h4up64bp2cb3ins2fmfdaunkacfqara5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.telecracksapp.izimath",
+            "certificate_hash": "ddce67052341b42b0e4284ba74edaea4cd030c12"
+          }
+        },
+        {
+          "client_id": "553711224641-166d2f7sr5btvvl0eop3eerjtea79jno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9MvVgN4dqMepcUuCbmEeahdE5Vjsqpgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553711224641-166d2f7sr5btvvl0eop3eerjtea79jno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
